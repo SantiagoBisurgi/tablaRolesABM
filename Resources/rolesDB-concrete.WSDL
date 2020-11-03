@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/Clase3Ejercicios/ABMroles/rolesDB" name="rolesDB-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="rolesDB.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/Clase3Ejercicios/ABMroles/rolesDB"/>
+    <wsdl:binding name="rolesDB_ptt-binding" type="rol:rolesDB_ptt" xmlns:rol="http://xmlns.oracle.com/pcbpel/adapter/db/Clase3Ejercicios/ABMroles/rolesDB">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="insert"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <soap:operation soapAction="update"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="delete"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:import location="rolesDB.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/Clase3Ejercicios/ABMroles/rolesDB">
+            <con:wsdl ref="ABMroles/Resources/rolesDB"/>
+        </con:import>
+    </con:dependencies>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/db/Clase3Ejercicios/ABMroles/rolesDB</con:targetNamespace>
+</con:wsdlEntry>

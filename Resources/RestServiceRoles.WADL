@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wadlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wadl><![CDATA[<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="RestServiceRoles">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/Clase3Ejercicios/ABMroles/rolesDB" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB" schemaLocation="rolesDB_table.xsd"/>
+      </schema>
+   </grammars>
+   <resources>
+      <resource path="/ABMroles">
+         <method name="POST" soa:wsdlOperation="insert">
+            <request>
+               <representation mediaType="application/json" element="cns:RolesCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB"/>
+            </request>
+            <response status="202"/>
+         </method>
+         <method name="PUT" soa:wsdlOperation="update">
+            <request>
+               <representation mediaType="application/json" element="cns:RolesCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB"/>
+            </request>
+            <response status="202"/>
+         </method>
+         <method name="DELETE" soa:wsdlOperation="delete">
+            <request soa:paramElement="pns:RolesCollection" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB">
+               <param name="id" style="query" soa:expression="$msg.RolesCollection/top:Roles/top:id" type="xsd:string"/>
+               <param name="nombre" style="query" soa:expression="$msg.RolesCollection/top:Roles/top:nombre" type="xsd:string"/>
+               <param name="rolIdPadre" style="query" soa:expression="$msg.RolesCollection/top:Roles/top:rolIdPadre" type="xsd:string"/>
+            </request>
+            <response status="202"/>
+         </method>
+      </resource>
+   </resources>
+</application>]]></con:wadl>
+    <con:dependencies>
+        <con:importSchema namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/rolesDB" schemaLocation="rolesDB_table.xsd" ref="ABMroles/Resources/rolesDB_table"/>
+    </con:dependencies>
+</con:wadlEntry>
